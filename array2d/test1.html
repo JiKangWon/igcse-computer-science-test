@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Quiz: Arrays in Pseudo Code</title>
+    
+    <style>
+        /* CSS Variables for color theme (Unchanged) */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        /* General Body Styling (Unchanged) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main Lecture Container (Unchanged) */
+        .lecture-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        /* Header Styling (Unchanged) */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 30px 40px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content Area (Unchanged) */
+        main {
+            padding: 30px 40px;
+        }
+
+        /* Section Styling (Unchanged) */
+        section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        /* h2/h3 Styling (Unchanged) */
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            border-bottom: 2px solid var(--light-blue-bg);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h3 {
+            color: var(--secondary-blue);
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+
+        /* Code Block Styling (Unchanged) */
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+
+        /* Box Styling for Exercises (Unchanged) */
+        .exercise-box {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+        .exercise-box h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        /* Button Styling (Unchanged) */
+        .toggle-solution-btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .toggle-solution-btn:hover {
+            background-color: var(--secondary-blue);
+        }
+        
+        /* Footer (Unchanged) */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* =================================
+        NEW CSS FOR QUIZ FUNCTIONALITY
+        =================================
+        */
+        .quiz-options {
+            margin-top: 15px;
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .quiz-options label:hover {
+            background-color: var(--light-blue-bg);
+        }
+        .quiz-options input[type="radio"] {
+            margin-right: 10px;
+            /* Make radio buttons larger and easier to click */
+            transform: scale(1.2);
+            accent-color: var(--primary-blue);
+        }
+
+        .quiz-controls {
+            text-align: center;
+            margin: 30px 0 20px;
+        }
+        /* Re-using button style for the main submit button */
+        #submitBtn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        #scoreDisplay {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+        }
+
+        /* Styles for feedback after grading */
+        .feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            display: none; /* Hidden by default */
+        }
+        .feedback.correct {
+            color: #28a745;
+            background-color: #e9f7ec;
+            border-color: #a3d9b1;
+            display: block;
+        }
+        .feedback.incorrect {
+            color: #dc3545;
+            background-color: #fbebed;
+            border-color: #f5b7bd;
+            display: block;
+        }
+        .correct-answer-text {
+            color: var(--secondary-blue);
+            font-weight: bold;
+            display: block; /* Show on a new line */
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="lecture-container">
+
+        <header>
+            <h1>CS Fundamentals Quiz</h1>
+            <p>Topic: 1D and 2D Arrays in Pseudo Code</p>
+        </header>
+
+        <main>
+            <section id="quiz-section">
+                <h2>Quiz Questions</h2>
+                <p>Select the best answer for each question. Your score will be calculated at the end.</p>
+                
+                <form id="quizForm">
+                
+                    <div class="exercise-box" id="q1-box">
+                        <h3>Question 1</h3>
+                        <p>In pseudo code, what is the index of the <strong>first</strong> element in an array?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. 1</label>
+                            <label><input type="radio" name="q1" value="b"> B. 0</label>
+                            <label><input type="radio" name="q1" value="c"> C. -1</label>
+                            <label><input type="radio" name="q1" value="d"> D. It depends on the declaration</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q2-box">
+                        <h3>Question 2</h3>
+                        <p>Given the array: <code>INITIALIZE scores = [80, 95, 72, 100]</code>. What is the value of <code>scores[2]</code>?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> A. 80</label>
+                            <label><input type="radio" name="q2" value="b"> B. 95</label>
+                            <label><input type="radio" name="q2" value="c"> C. 72</label>
+                            <label><input type="radio" name="q2" value="d"> D. 100</label>
+                        </div>
+                        <div class="feedback" id="feedback-q2"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q3-box">
+                        <h3>Question 3</h3>
+                        <p>What is the primary purpose of this pseudo code?</p>
+                        <pre><code>START
+    INITIALIZE numbers = [10, 20, 30]
+    SET total = 0
+    FOR i = 0 TO 2
+        SET total = total + numbers[i]
+    ENDFOR
+    PRINT total
+END</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> A. To find the largest number</label>
+                            <label><input type="radio" name="q3" value="b"> B. To calculate the sum of the array</label>
+                            <label><input type="radio" name="q3" value="c"> C. To print the array in reverse</label>
+                            <label><input type="radio" name="q3" value="d"> D. To find the average of the array</label>
+                        </div>
+                        <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q4-box">
+                        <h3>Question 4</h3>
+                        <p>Given <code>INITIALIZE names = ["Ali", "Ben", "Cam"]</code>, what does <code>SET names[1] = "Beth"</code> do?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> A. It adds "Beth" to the end of the array.</label>
+                            <label><input type="radio" name="q4" value="b"> B. It causes an error because the array is full.</label>
+                            <label><input type="radio" name="q4" value="c"> C. It replaces "Ben" with "Beth".</label>
+                            <label><input type="radio" name="q4" value="d"> D. It replaces "Ali" with "Beth".</label>
+                        </div>
+                        <div class="feedback" id="feedback-q4"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q5-box">
+                        <h3>Question 5</h3>
+                        <p>How would you declare a 2D array (matrix) named <code>grid</code> with 5 rows and 3 columns in pseudo code?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q5" value="a"> A. <code>DECLARE grid AS Array[5, 3]</code></label>
+                            <label><input type="radio" name="q5" value="b"> B. <code>DECLARE grid AS Array[8]</code></label>
+                            <label><input type="radio" name="q5" value="c"> C. <code>DECLARE grid AS Array[5][3]</code></label>
+                            <label><input type="radio" name="q5" value="d"> D. <code>DECLARE grid(5, 3)</code></label>
+                        </div>
+                        <div class="feedback" id="feedback-q5"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q6-box">
+                        <h3>Question 6</h3>
+                        <p>Given <code>INITIALIZE matrix = [ [1, 2], [3, 4] ]</code>. What is the value of <code>matrix[1][0]</code>?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q6" value="a"> A. 1</label>
+                            <label><input type="radio" name="q6" value="b"> B. 2</label>
+                            <label><input type="radio" name="q6" value="c"> C. 3</label>
+                            <label><input type="radio" name="q6" value="d"> D. 4</label>
+                        </div>
+                        <div class="feedback" id="feedback-q6"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q7-box">
+                        <h3>Question 7</h3>
+                        <p>What kind of control structure is typically used to traverse (loop through) every element of a 2D array?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q7" value="a"> A. A single FOR loop</label>
+                            <label><input type="radio" name="q7" value="b"> B. An IF-THEN-ELSE statement</label>
+                            <label><input type="radio" name="q7" value="c"> C. Nested FOR loops (one inside another)</label>
+                            <label><input type="radio" name="q7" value="d"> D. A WHILE loop</label>
+                        </div>
+                        <div class="feedback" id="feedback-q7"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q8-box">
+                        <h3>Question 8</h3>
+                        <p>Consider this pseudo code:</p>
+                        <pre><code>INITIALIZE data = [5, 1, 9, 3]
+SET maxVal = data[0]
+FOR i = 1 TO 3
+    IF data[i] > maxVal THEN
+        SET maxVal = data[i]
+    ENDIF
+ENDFOR
+PRINT maxVal</code></pre>
+                        <p>What is the final output?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q8" value="a"> A. 5</label>
+                            <label><input type="radio" name="q8" value="b"> B. 1</label>
+                            <label><input type="radio" name="q8" value="c"> C. 9</label>
+                            <label><input type="radio" name="q8" value="d"> D. 3</label>
+                        </div>
+                        <div class="feedback" id="feedback-q8"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q9-box">
+                        <h3>Question 9</h3>
+                        <p>An array is defined as <code>INITIALIZE items = [10, 20, 30, 40, 50]</code>. What is the index of the <strong>last</strong> element?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q9" value="a"> A. 5</label>
+                            <label><input type="radio" name="q9" value="b"> B. 4</label>
+                            <label><input type="radio" name="q9" value="c"> C. 50</label>
+                            <label><input type="radio" name="q9" value="d"> D. 0</label>
+                        </div>
+                        <div class="feedback" id="feedback-q9"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q10-box">
+                        <h3>Question 10</h3>
+                        <p>True or False: In most pseudo code, all elements in an array must be of the same data type.</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q10" value="a"> A. True</label>
+                            <label><input type="radio" name="q10" value="b"> B. False</label>
+                        </div>
+                        <div class="feedback" id="feedback-q10"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q11-box">
+                        <h3>Question 11</h3>
+                        <p>What is the output of this code?</p>
+                        <pre><code>INITIALIZE letters = ["a", "b", "c"]
+FOR i = 2 DOWNTO 0
+    PRINT letters[i]
+ENDFOR</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q11" value="a"> A. a b c</label>
+                            <label><input type="radio" name="q11" value="b"> B. c b a</label>
+                            <label><input type="radio" name="q11" value="c"> C. a c</label>
+                            <label><input type="radio" name="q11" value="d"> D. c b a b c</label>
+                        </div>
+                        <div class="feedback" id="feedback-q11"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q12-box">
+                        <h3>Question 12</h3>
+                        <p>Given <code>INITIALIZE board = [ ["X", "O"], ["O", "X"] ]</code>. What is <code>board[0][1]</code>?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q12" value="a"> A. "X"</label>
+                            <label><input type="radio" name="q12" value="b"> B. "O"</label>
+                            <label><input type="radio" name="q12" value="c"> C. ["X", "O"]</label>
+                            <label><input type="radio" name="q12" value="d"> D. Error</label>
+                        </div>
+                        <div class="feedback" id="feedback-q12"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q13-box">
+                        <h3>Question 13</h3>
+                        <p>What does this pseudo code do?</p>
+                        <pre><code>INITIALIZE grades = [80, 90, 100, 70]
+SET count = 0
+FOR i = 0 TO 3
+    IF grades[i] >= 90 THEN
+        SET count = count + 1
+    ENDIF
+ENDFOR
+PRINT count</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q13" value="a"> A. It prints the total sum of grades.</label>
+                            <label><input type="radio" name="q13" value="b"> B. It prints the largest grade (100).</label>
+                            <label><input type="radio" name="q13" value="c"> C. It prints the number of grades 90 or higher.</label>
+                            <label><input type="radio" name="q13" value="d"> D. It prints the number of grades below 90.</label>
+                        </div>
+                        <div class="feedback" id="feedback-q13"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q14-box">
+                        <h3>Question 14</h3>
+                        <p>In a 2D array <code>data[row][col]</code>, which index typically represents the column?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q14" value="a"> A. <code>row</code></label>
+                            <label><input type="radio" name="q14" value="b"> B. <code>col</code></label>
+                            <label><input type="radio" name="q14" value="c"> C. <code>data</code></label>
+                            <label><input type="radio" name="q14" value="d"> D. Neither, they are interchangeable.</label>
+                        </div>
+                        <div class="feedback" id="feedback-q14"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q15-box">
+                        <h3>Question 15</h3>
+                        <p>What is the output of this code snippet?</p>
+                        <pre><code>INITIALIZE grid = [ [1, 5], [10, 15] ]
+SET total = 0
+FOR row = 0 TO 1
+    SET total = total + grid[row][0]
+ENDFOR
+PRINT total</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q15" value="a"> A. 31 (Sum of all elements)</label>
+                            <label><input type="radio" name="q15" value="b"> B. 6 (Sum of the first row)</label>
+                            <label><input type="radio" name="q15" value="c"> C. 11 (Sum of the first column)</label>
+                            <label><input type="radio" name="q15" value="d"> D. 20 (Sum of the second column)</label>
+                        </div>
+                        <div class="feedback" id="feedback-q15"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q16-box">
+                        <h3>Question 16</h3>
+                        <p><code>INITIALIZE data = [1, 2, 3]</code>. What happens if you try to <code>PRINT data[3]</code>?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q16" value="a"> A. It prints 1.</label>
+                            <label><input type="radio" name="q16" value="b"> B. It prints 3.</label>
+                            <label><input type="radio" name="q16" value="c"> C. It results in an "index out of bounds" error.</label>
+                            <label><input type="radio" name="q16" value="d"> D. It prints 0.</label>
+                        </div>
+                        <div class="feedback" id="feedback-q16"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q17-box">
+                        <h3>Question 17</h3>
+                        <p>Given <code>matrix = [ [1, 2, 3], [4, 5, 6] ]</code>. How many rows and columns does it have?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q17" value="a"> A. 3 rows, 2 columns</label>
+                            <label><input type="radio" name="q17" value="b"> B. 2 rows, 3 columns</label>
+                            <label><input type="radio" name="q17" value="c"> C. 2 rows, 2 columns</label>
+                            <label><input type="radio" name="q17" value="d"> D. 3 rows, 3 columns</label>
+                        </div>
+                        <div class="feedback" id="feedback-q17"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q18-box">
+                        <h3>Question 18</h3>
+                        <p>What is the process of visiting every element in an array exactly once called?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q18" value="a"> A. Initialization</label>
+                            <label><input type="radio" name="q18" value="b"> B. Declaration</label>
+                            <label><input type="radio" name="q18" value="c"> C. Traversal</label>
+                            <label><input type="radio" name="q18" value="d"> D. Modification</label>
+                        </div>
+                        <div class="feedback" id="feedback-q18"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q19-box">
+                        <h3>Question 19</h3>
+                        <p>What is the output of this code?</p>
+                        <pre><code>INITIALIZE arr = [10, 20, 30]
+SET temp = arr[0]
+SET arr[0] = arr[2]
+SET arr[2] = temp
+PRINT arr[0] + arr[2]</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q19" value="a"> A. 20</label>
+                            <label><input type="radio" name="q19" value="b"> B. 40</label>
+                            <label><input type="radio" name="q19" value="c"> C. 30</label>
+                            <label><input type="radio" name="q19" value="d"> D. 60</label>
+                        </div>
+                        <div class="feedback" id="feedback-q19"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q20-box">
+                        <h3>Question 20</h3>
+                        <p>In a nested loop for a 2D array <code>grid[rows][cols]</code>, the outer loop usually iterates over the...</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q20" value="a"> A. Rows</label>
+                            <label><input type="radio" name="q20" value="b"> B. Columns</label>
+                            <label><input type="radio" name="q20" value="c"> C. Elements</label>
+                            <label><input type="radio" name="q20" value="d"> D. Data types</label>
+                        </div>
+                        <div class="feedback" id="feedback-q20"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q21-box">
+                        <h3>Question 21</h3>
+                        <p>What is the value of <code>arr[1]</code> after this code runs?</p>
+                        <pre><code>INITIALIZE arr = [5, 10, 15]
+SET i = 0
+SET arr[i+1] = arr[i]
+PRINT arr[1]</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q21" value="a"> A. 10</label>
+                            <label><input type="radio" name="q21" value="b"> B. 5</label>
+                            <label><input type="radio" name="q21" value="c"> C. 15</label>
+                            <label><input type="radio" name="q21" value="d"> D. Error</label>
+                        </div>
+                        <div class="feedback" id="feedback-q21"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q22-box">
+                        <h3>Question 22</h3>
+                        <p>What is a 2D array?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q22" value="a"> A. An array that can only hold 2 elements.</label>
+                            <label><input type="radio" name="q22" value="b"> B. An array with two different data types.</label>
+                            <label><input type="radio" name="q22" value="c"> C. An array of arrays, organized in rows and columns.</label>
+                            <label><input type="radio" name="q22" value="d"> D. An array that stores data in a single line.</label>
+                        </div>
+                        <div class="feedback" id="feedback-q22"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q23-box">
+                        <h3>Question 23</h3>
+                        <p>Given <code>seatingChart[5][10]</code>, what is the index of the last row?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q23" value="a"> A. 5</label>
+                            <label><input type="radio" name="q23" value="b"> B. 10</label>
+                            <label><input type="radio" name="q23" value="c"> C. 9</label>
+                            <label><input type="radio" name="q23" value="d"> D. 4</label>
+                        </div>
+                        <div class="feedback" id="feedback-q23"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q24-box">
+                        <h3>Question 24</h3>
+                        <p>What is the output of this code snippet?</p>
+                        <pre><code>INITIALIZE grid = [ [1, 2], [3, 4] ]
+PRINT grid[0][1] + grid[1][1]</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q24" value="a"> A. 4 (1 + 3)</label>
+                            <label><input type="radio" name="q24" value="b"> B. 5 (2 + 3)</label>
+                            <label><input type="radio" name="q24" value="c"> C. 6 (2 + 4)</label>
+                            <label><input type="radio" name="q24" value="d"> D. 7 (3 + 4)</label>
+                        </div>
+                        <div class="feedback" id="feedback-q24"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q25-box">
+                        <h3>Question 25</h3>
+                        <p>A loop that runs <code>FOR i = 0 TO 4</code> will execute how many times?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q25" value="a"> A. 4 times</label>
+                            <label><input type="radio" name="q25" value="b"> B. 5 times (for indices 0, 1, 2, 3, 4)</label>
+                            <label><input type="radio" name="q25" value="c"> C. 3 times</label>
+                            <label><input type="radio" name="q25" value="d"> D. 6 times</label>
+                        </div>
+                        <div class="feedback" id="feedback-q25"></div>
+                    </div>
+
+                    <div class="exercise-box" id="q26-box">
+                        <h3>Question 26</h3>
+                        <p>What is the term for a specific element's position in an array?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q26" value="a"> A. Value</label>
+                            <label><input type="radio" name="q26" value="b"> B. Index</label>
+                            <label><input type="radio" name="q26" value="c"> C. Element</label>
+                            <label><input type="radio" name="q26" value="d"> D. Size</label>
+                        </div>
+                        <div class="feedback" id="feedback-q26"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q27-box">
+                        <h3>Question 27</h3>
+                        <p>Consider <code>INITIALIZE arr = [2, 4, 6]</code>. What is <code>arr[arr[0]]</code>?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q27" value="a"> A. 2</label>
+                            <label><input type="radio" name="q27" value="b"> B. 4</label>
+                            <label><input type="radio" name="q27" value="c"> C. 6</label>
+                            <label><input type="radio" name="q27" value="d"> D. Error</label>
+                        </div>
+                        <div class="feedback" id="feedback-q27"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q28-box">
+                        <h3>Question 28</h3>
+                        <p>This code sums the elements of a specific row. Which row?</p>
+                        <pre><code>INITIALIZE grid = [ [1,2], [3,4], [5,6] ]
+SET rowSum = 0
+SET r = 1
+FOR c = 0 TO 1
+    SET rowSum = rowSum + grid[r][c]
+ENDFOR
+PRINT rowSum</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q28" value="a"> A. Row 0 (sum is 3)</label>
+                            <label><input type="radio" name="q28" value="b"> B. Row 1 (sum is 7)</label>
+                            <label><input type="radio" name="q28" value="c"> C. Row 2 (sum is 11)</label>
+                            <label><input type="radio" name="q28" value="d"> D. Column 1 (sum is 12)</label>
+                        </div>
+                        <div class="feedback" id="feedback-q28"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q29-box">
+                        <h3>Question 29</h3>
+                        <p>If an array is declared as <code>DECLARE data[10]</code>, what is the valid range of indices?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q29" value="a"> A. 1 to 10</label>
+                            <label><input type="radio" name="q29" value="b"> B. 0 to 10</label>
+                            <label><input type="radio" name="q29" value="c"> C. 0 to 9</label>
+                            <label><input type="radio" name="q29" value="d"> D. 1 to 9</label>
+                        </div>
+                        <div class="feedback" id="feedback-q29"></div>
+                    </div>
+                    
+                    <div class="exercise-box" id="q30-box">
+                        <h3>Question 30</h3>
+                        <p>What is the output of this code?</p>
+                        <pre><code>INITIALIZE grid = [ [1, 2, 3], [4, 5, 6] ]
+PRINT grid[1][2]</code></pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q30" value="a"> A. 2</label>
+                            <label><input type="radio" name="q30" value="b"> B. 3</label>
+                            <label><input type="radio" name="q30" value="c"> C. 4</label>
+                            <label><input type="radio" name="q30" value="d"> D. 6</label>
+                        </div>
+                        <div class="feedback" id="feedback-q30"></div>
+                    </div>
+                    
+                </form>
+                
+                <div class="quiz-controls">
+                     <button id="submitBtn" class="toggle-solution-btn">Check Answers</button>
+                     <h2 id="scoreDisplay"></h2>
+                </div>
+                
+            </section>
+        </main>
+
+        <footer>
+            <p>Computer Science Department - Quiz Page</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Define the correct answers
+            const correctAnswers = {
+                q1: 'b', q2: 'c', q3: 'b', q4: 'c', q5: 'c',
+                q6: 'c', q7: 'c', q8: 'c', q9: 'b', q10: 'a',
+                q11: 'b', q12: 'b', q13: 'c', q14: 'b', q15: 'c',
+                q16: 'c', q17: 'b', q18: 'c', q19: 'b', q20: 'a',
+                q21: 'b', q22: 'c', q23: 'd', q24: 'c', q25: 'b',
+                q26: 'b', q27: 'c', q28: 'b', q29: 'c', q30: 'd'
+            };
+            
+            const totalQuestions = 30;
+            const submitBtn = document.getElementById('submitBtn');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const quizForm = document.getElementById('quizForm');
+
+            submitBtn.addEventListener('click', function(event) {
+                // Prevent the form from submitting in the traditional way
+                event.preventDefault();
+                
+                let score = 0;
+                
+                // Loop through all questions
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const qName = 'q' + i;
+                    const feedbackEl = document.getElementById('feedback-' + qName);
+                    const questionBox = document.getElementById(qName + '-box');
+                    
+                    // Find the selected radio button for this question
+                    const selectedOption = quizForm.querySelector('input[name="' + qName + '"]:checked');
+                    
+                    if (selectedOption) {
+                        const userAnswer = selectedOption.value;
+                        const correctAnswer = correctAnswers[qName];
+                        
+                        // Find the text of the correct answer label
+                        const correctLabel = quizForm.querySelector('input[name="' + qName + '"][value="' + correctAnswer + '"]').parentElement.textContent;
+
+                        if (userAnswer === correctAnswer) {
+                            score++;
+                            feedbackEl.innerHTML = "<strong>Correct!</strong>";
+                            feedbackEl.className = 'feedback correct';
+                        } else {
+                            feedbackEl.innerHTML = `<strong>Incorrect.</strong> 
+                                <span class="correct-answer-text">Correct answer: ${correctLabel}</span>`;
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        // If no answer was selected
+                        feedbackEl.innerHTML = "<strong>No answer selected.</strong>";
+                        feedbackEl.className = 'feedback incorrect';
+                    }
+                }
+                
+                // Display the final score
+                scoreDisplay.textContent = `Your Score: ${score} / ${totalQuestions}`;
+                
+                // Scroll to the score
+                scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    </script>
+
+</body>
+</html>

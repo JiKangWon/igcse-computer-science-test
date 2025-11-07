@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Exercises: Arrays in Pseudo Code</title>
+    
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+        .lecture-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 30px 40px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 5px 0 0; font-size: 1.1rem; opacity: 0.9; }
+        nav {
+            background-color: var(--secondary-blue);
+            padding: 10px 40px;
+            text-align: center;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover { background-color: rgba(255, 255, 255, 0.2); }
+        main { padding: 30px 40px; }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            border-bottom: 2px solid var(--light-blue-bg);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        p { font-size: 1rem; color: var(--text-light); }
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        .exercise-box {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+        .exercise-box h3 { 
+            margin-top: 0; 
+            font-size: 1.3rem;
+            color: var(--secondary-blue);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lecture-container">
+
+        <header>
+            <h1>Array Pseudo Code Exercises</h1>
+            <p>Practice Problem Set</p>
+        </header>
+
+        <nav>
+            <a href="#exercises">Practice Problems</a>
+        </nav>
+
+        <main>
+
+            <section id="exercises">
+                <h2>Practice Problems</h2>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 1: Print First Element</h3>
+                    <p>Given the array <code>colors = ["Red", "Green", "Blue"]</code>, write pseudo code to print the first element.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <h3>Exercise 2: Print Last Element</h3>
+                    <p>Given the array <code>numbers = [10, 20, 30, 40, 50]</code>, write pseudo code to print the last element.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 3: Modify an Element</h3>
+                    <p>Given the array <code>grades = [88, 75, 90]</code>, write pseudo code to change the second element (at index 1) to <code>80</code> and then print the entire array.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 4: Print All Elements</h3>
+                    <p>Given the array <code>fruits = ["Apple", "Banana", "Cherry"]</code>, write pseudo code to print each element on a new line.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <h3>Exercise 5: Get User Input into Array</h3>
+                    <p>Write pseudo code that creates an empty array of size 3 and fills it with 3 numbers provided by the user.</p>
+                </div>
+            
+                <div class="exercise-box">
+                    <h3>Exercise 6: Calculate Sum</h3>
+                    <p>Given <code>data = [5, 10, 15, 20]</code>, write pseudo code to calculate and print the sum of all its elements.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <h3>Exercise 7: Calculate Average</h3>
+                    <p>Given <code>scores = [100, 80, 90, 70]</code>, write pseudo code to calculate and print the average score.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 8: Find the Smallest Number</h3>
+                    <p>Given <code>values = [45, 22, 88, 12, 5]</code>, write pseudo code to find and print the smallest number in the array.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 9: Find the Largest Number</h3>
+                    <p>Given <code>values = [45, 22, 88, 12, 5]</code>, write pseudo code to find and print the largest number in the array.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <h3>Exercise 10: Count Even Numbers</h3>
+                    <p>Given <code>nums = [1, 2, 3, 4, 5, 6]</code>, write pseudo code to count how many numbers are even.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 11: Linear Search</h3>
+                    <p>Given <code>names = ["Ana", "Tom", "Lee"]</code>, write pseudo code to check if the name "Tom" exists in the array. Print "Found" or "Not Found".</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 12: Copy an Array</h3>
+                    <p>Given <code>arrayA = [1, 2, 3]</code>, write pseudo code to copy all its elements into a new array called <code>arrayB</code>.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 13: Print Positive Numbers</h3>
+                    <p>Given <code>mix = [5, -10, 15, -2, 8]</code>, write pseudo code to print only the positive numbers.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 14: Print Array in Reverse</h3>
+                    <p>Given <code>items = [10, 20, 30, 40]</code>, write pseudo code to print the elements in reverse order (40, 30, 20, 10).</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 15: Find Index of Smallest</h3>
+                    <p>Given <code>data = [15, 8, 22, 10]</code>, write pseudo code to find the <strong>index</strong> of the smallest number (which is <code>8</code> at index <code>1</code>).</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 16: Check for Palindrome</h3>
+                    <p>An array is a palindrome if it reads the same forwards and backwards. Given <code>arr = [1, 2, 3, 2, 1]</code>, check if it's a palindrome.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 17: Reverse an Array (In-Place)</h3>
+                    <p>Given <code>arr = [1, 2, 3, 4, 5]</code>, write pseudo code to reverse the array *without* creating a new one. The final array should be <code>[5, 4, 3, 2, 1]</code>.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <h3>Exercise 18: Check if Sorted</h3>
+                    <p>Given <code>nums = [10, 20, 30, 45, 50]</code>, write pseudo code to check if the array is sorted in ascending (increasing) order.</p>
+                </div>
+
+                <div class="exercise-box">
+                    <h3>Exercise 19: Shift Elements Left</h3>
+                    <p>Given <code>arr = [1, 2, 3, 4]</code>, "shift" all elements one position to the left and move the first element to the end. The result should be <code>[2, 3, 4, 1]</code>.</p>
+                </div>
+                
+                <div class="exercise-box">
+                    <h3>Exercise 20: Concatenate Two Arrays</h3>
+                    <p>Given <code>listA = [1, 2]</code> and <code>listB = [3, 4]</code>, write pseudo code to create a new array <code>listC</code> that contains all elements from A, followed by all elements from B. The result should be <code>[1, 2, 3, 4]</code>.</p>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>Computer Science Department - Practice Exercises</p>
+        </footer>
+    </div>
+
+    </body>
+</html>
