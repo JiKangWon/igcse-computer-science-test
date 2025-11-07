@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Exam: Pseudocode Challenge</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .challenge-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .challenge-title .bi {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+        
+        .scenario-box {
+            background-color: var(--light-blue-bg);
+            border: 1px solid #bde0ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .task-list {
+            padding-left: 1.5rem;
+        }
+        
+        .task-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .task-list li::marker {
+            font-weight: bold;
+        }
+        
+        .task-list ul {
+            margin-top: 0.5rem;
+        }
+        
+        pre.example-flow {
+            background-color: #212529; /* Nền tối */
+            color: #f8f9fa; /* Chữ sáng */
+            padding: 1rem;
+            border-radius: 0.375rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>Final Exam</h1>
+            <p>Pseudocode Challenge</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <h3 class="challenge-title">
+                    <i class="bi bi-file-earmark-code-fill"></i>
+                    Pseudocode Challenge: The Final Exam Audit
+                </h3>
+                
+                <div class="scenario-box">
+                    <strong>Scenario:</strong> A professor needs to audit the final exam results for a class of <strong>50 students</strong>. They have analyzed the class performance and stored the data in two parallel 1D arrays:
+                    <ul>
+                        <li><code>StudentNames</code> (stores the name of each student, e.g., "Anh Nguyen")</li>
+                        <li><code>ExamScores</code> (stores the final exam score for each student, e.g., 85)</li>
+                    </ul>
+                    <p class="mb-0 mt-2">The professor needs a program that processes this data to identify two groups, as well as calculate class statistics.</p>
+                </div>
+
+                <h4 class="mt-4">The Task</h4>
+                <p>Write a pseudocode algorithm that processes the exam data and meets the following requirements:</p>
+                
+                <ol class="task-list">
+                    <li>The algorithm must assume that the two parallel arrays, <code>StudentNames</code> and <code>ExamScores</code>, both containing <strong>50 elements</strong>, are already populated with data.</li>
+                    
+                    <li>Declare and initialize a <strong>third 1D array</strong> named <code>FailingStudents</code> capable of holding 50 student names (strings). Also, declare and initialize an integer counter named <code>FailCount</code> to 0.</li>
+                    
+                    <li>Declare and initialize integer variables <code>ClassTotal</code> (for summing all scores) and <code>HighestScore</code> (for tracking the maximum score) to 0.</li>
+                    
+                    <li>The program must <strong>search through the <code>ExamScores</code> array</strong> (from index 0 to 49).</li>
+                    
+                    <li>For <strong>every</strong> student, the algorithm must perform the following actions:
+                        <ul>
+                            <li>Add the student's score to the <code>ClassTotal</code>.</li>
+                            <li>Check if the student's score is greater than the current <code>HighestScore</code> and update it if necessary.</li>
+                            <li><strong>Top Student Output:</strong> If the <code>ExamScores</code>[i] is <strong>greater than or equal to 90</strong>, the algorithm must <strong>immediately</strong> display the student's name and their score under the heading "*** TOP STUDENTS (>= 90) ***".</li>
+                            <li><strong>Failing Student Tracking:</strong> If the <code>ExamScores</code>[i] is <strong>less than 50</strong>, the algorithm must <strong>store</strong> the student's name (from <code>StudentNames</code>[i]) into the next available position in the <code>FailingStudents</code> array and increment the <code>FailCount</code> counter.</li>
+                        </ul>
+                    </li>
+                    
+                    <li><strong>After the search loop is complete</strong>, the program must use a separate section to display the final statistics:
+                        <ul>
+                            <li>Calculate and display the <code>ClassAverage</code> (ClassTotal / 50).</li>
+                            <li>Display the <code>HighestScore</code>.</li>
+                            <li>Use a <strong>separate loop</strong> to display the contents of the <code>FailingStudents</code> array under the heading "*** FAILING STUDENTS (< 50) ***".</li>
+                            <li>If the <code>FailCount</code> is 0, the program must display the message: "No students failed the exam." instead of the list.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h4 class="mt-4">Example Output Flow</h4>
+                <pre class="example-flow">*** TOP STUDENTS (>= 90) ***
+Name: Tran Van B, Score: 92
+Name: Le Thi C, Score: 95
+Name: Pham Gia H, Score: 100
+
+*** CLASS STATISTICS ***
+Class Average: 78.5
+Highest Score: 100
+
+*** FAILING STUDENTS (< 50) ***
+Nguyen Van A
+Hoang Thi D
+...</pre>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
