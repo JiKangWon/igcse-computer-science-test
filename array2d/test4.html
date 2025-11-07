@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Challenge: 2D Arrays</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .challenge-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .challenge-title .bi {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+        
+        .scenario-box {
+            background-color: var(--light-blue-bg);
+            border: 1px solid #bde0ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .task-list {
+            padding-left: 1.5rem;
+        }
+        
+        .task-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .task-list li::marker {
+            font-weight: bold;
+        }
+        
+        .task-list ul {
+            margin-top: 0.5rem;
+        }
+        
+        pre.example-flow {
+            background-color: #212529; /* Nền tối */
+            color: #f8f9fa; /* Chữ sáng */
+            padding: 1rem;
+            border-radius: 0.375rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>Pseudocode Challenge</h1>
+            <p>Problem Solving with 2D Arrays</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <h3 class="challenge-title">
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+                    Pseudocode Challenge: The Quarterly Sales Report
+                </h3>
+                
+                <div class="scenario-box">
+                    <strong>Scenario:</strong> A sales manager tracks the monthly sales for their team of <strong>4 salespeople</strong> over one quarter (3 months: Jan, Feb, Mar). The data is stored in two parallel arrays:
+                    <ul>
+                        <li><code>SalesTeam</code>: A 1D array of strings storing the names. (Size 4)</li>
+                        <li><code>SalesData</code>: A 2D array of integers storing the sales figures. (Size 4x3)</li>
+                    </ul>
+                    <p class="mb-0 mt-2">The <strong>row index</strong> links the two arrays (e.g., <code>SalesTeam[1]</code> is the name for the sales data in <code>SalesData[1]</code>). The <strong>column index</strong> represents the month (0=Jan, 1=Feb, 2=Mar).</p>
+                </div>
+
+                <h4 class="mt-4">The Task</h4>
+                <p>Write a pseudocode algorithm that processes the sales data and meets the following requirements:</p>
+                
+                <ol class="task-list">
+                    <li>The algorithm must assume that the <code>SalesTeam</code> (1D array, size 4) and <code>SalesData</code> (2D array, size 4 rows, 3 columns) are already populated with data.</li>
+                    
+                    <li>Declare a <strong>new 1D array</strong> named <code>SalesTotals</code> capable of holding 4 integer values, one for each salesperson's total.</li>
+                    
+                    <li>Declare two variables: <code>HighestTotal</code> (integer, initialized to 0) and <code>TopPerformer</code> (string, initialized to "").</li>
+                    
+                    <li>The program must use <strong>nested loops</strong> to traverse the <code>SalesData</code> array.
+                        <ul>
+                            <li>The <strong>outer loop</strong> must iterate through the <strong>rows</strong> (salespeople, index 0 to 3).</li>
+                            <li>The <strong>inner loop</strong> must iterate through the <strong>columns</strong> (months, index 0 to 2).</li>
+                        </ul>
+                    </li>
+                    
+                    <li>Inside the inner loop, the algorithm must add the sales figure from <code>SalesData[row][col]</code> to a running total for that specific row.</li>
+                    
+                    <li><strong>After</strong> the inner loop finishes (but still inside the outer loop), the algorithm must:
+                        <ul>
+                            <li>Store the final running total for that row into the corresponding index of the <code>SalesTotals</code> array (e.g., <code>SalesTotals[row]</code>).</li>
+                            <li><strong>Immediately</strong> print the salesperson's name and their total sales for the quarter.</li>
+                            <li>Check if this salesperson's total (from <code>SalesTotals[row]</code>) is greater than <code>HighestTotal</code>. If it is, update <code>HighestTotal</code> with the new value and <code>TopPerformer</code> with the salesperson's name (from <code>SalesTeam[row]</code>).</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>After all loops are complete</strong>, the program must display the overall top performer and their total sales under a separate heading.</li>
+                </ol>
+
+                <h4 class="mt-4">Example Output Flow</h4>
+                <pre class="example-flow">(Assuming SalesTeam = ["Anna", "Ben", "Chris", "Dana"])
+
+*** QUARTERLY SALES TOTALS ***
+Anna: $1550
+Ben: $1200
+Chris: $1850
+Dana: $1600
+
+*** TOP PERFORMER ***
+Chris: $1850</pre>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
