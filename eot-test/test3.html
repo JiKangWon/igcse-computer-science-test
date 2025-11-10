@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Computer Science End-of-Term Examination</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .question-section {
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .question-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .question-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .question-part {
+            margin-bottom: 1.25rem;
+        }
+        
+        .question-part p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-part li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .marks {
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        
+        pre.code-block {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--secondary-blue);
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95rem;
+        }
+        
+        table.trace-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: "Courier New", Courier, monospace;
+        }
+        
+        table.trace-table th, table.trace-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: center;
+        }
+        
+        table.trace-table th {
+            background-color: var(--code-bg);
+            font-weight: bold;
+        }
+        
+        .answer-space {
+            border-bottom: 1px dotted #999;
+            height: 2.5em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .answer-space-small {
+            height: 1.5em;
+            border-bottom: 1px dotted #999;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>IGCSE Computer Science End-of-Term Examination</h1>
+            <p>Computer Science Theory (Structured Questions)</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <div class="mb-4">
+                    <strong>Duration:</strong> 1 hour 15 minutes<br>
+                    <strong>Total Marks:</strong> 50
+                </div>
+                <hr>
+
+                <section class="question-section">
+                    <h2 class="question-title">Section A: Automated Systems, Robotics, and AI</h2>
+
+                    <h3>Question 1</h3>
+                    <p>A large pharmaceutical company has fully automated its paracetamol manufacturing plant. This system uses sensors, a central computer, and actuators.</p>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Describe the roles of the three main components of this automated system:</p>
+                        <ol type="i">
+                            <li><strong>Sensors:</strong> <span class="marks">[2]</span>
+                                <div class="answer-space"></div>
+                                <div class="answer-space"></div>
+                            </li>
+                            <li><strong>Central Computer (Microprocessor):</strong> <span class="marks">[1]</span>
+                                <div class="answer-space"></div>
+                            </li>
+                            <li><strong>Actuators:</strong> <span class="marks">[1]</span>
+                                <div class="answer-space"></div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Give two advantages of using this fully automated system in drug manufacturing. <span class="marks">[2]</span></p>
+                        <div class="answer-space-small"></div>
+                        <div class="answer-space-small"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Describe two potential disadvantages the company must manage. <span class="marks">[2]</span></p>
+                        <div class="answer-space-small"></div>
+                        <div class="answer-space-small"></div>
+                    </div>
+
+                    <h3>Question 2</h3>
+                    <p>High-tech vehicles, such as self-parking cars, are examples of complex robots.</p>
+                    <div class="question-part">
+                        <p><strong>a)</strong> State the three characteristics required for a device to be classified as a robot. <span class="marks">[3]</span></p>
+                        <div class="answer-space-small"></div>
+                        <div class="answer-space-small"></div>
+                        <div class="answer-space-small"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Explain how sensors and the on-board computer in a self-parking car interact to gauge a parking space. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Explain how an Expert System uses its Knowledge Base and Rules Base to simulate human expertise. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <section class="question-section">
+                    <h2 class="question-title">Section B: Digital Currency and Advanced Cyber Security</h2>
+                    
+                    <h3>Question 3</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Define the two types of digital currency and explain the primary difference regarding their regulation. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Explain how the hash value and previous hash value link blocks in a blockchain and prevent tampering. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <h3>Question 4</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Describe two common methods used in social engineering that rely on exploiting fear or curiosity. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Describe the main role of Secure Sockets Layer (SSL) and one visible indicator of its use. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Describe the two distinct factors typically required in Two-step verification. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <section class="question-section">
+                    <h2 class="question-title">Section C: Program Development, Validation, and Maintenance</h2>
+
+                    <h3>Question 5</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Describe the purpose of Decomposition and Abstraction during the Analysis stage. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Define the following test data, in relation to a check for values between 1 and 100:</p>
+                        <ol type="i">
+                            <li>Abnormal Data (Erroneous Data): <span class="marks">[1]</span>
+                                <div class="answer-space-small"></div>
+                            </li>
+                            <li>Boundary Data: <span class="marks">[1]</span>
+                                <div class="answer-space-small"></div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Explain two ways a programmer can ensure their code is maintainable. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+
+                    <h3>Question 6</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Explain the fundamental difference between a Procedure and a Function. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Explain the difference between a Local Variable and a Global Variable in terms of scope. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Describe two types of validation checks for an ID input that must be exactly five numeric digits. <span class="marks">[4]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
