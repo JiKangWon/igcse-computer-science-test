@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE CS Practice Test 3: Security Mitigation</title>
+    
+    <!-- Tải Bootstrap CSS và Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .question-section {
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .question-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .question-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .question-part {
+            margin-bottom: 1.25rem;
+        }
+        
+        .question-part p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-part li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .marks {
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        
+        .scenario-box {
+            background-color: var(--light-blue-bg);
+            border: 1px solid #bde0ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* Không gian trống để trả lời */
+        .answer-space {
+            border-bottom: 1px dotted #999;
+            height: 2.5em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .answer-space-small {
+            height: 1.5em;
+            border-bottom: 1px dotted #999;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>IGCSE Computer Science Practice Test 3</h1>
+            <p>Security Mitigation and Threats</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <div class="mb-4">
+                    <strong>Maximum Marks:</strong> 40<br>
+                    <strong>Recommended Time:</strong> 45 Minutes
+                </div>
+                <hr>
+
+                <!-- SECTION A -->
+                <section class="question-section">
+                    <h2 class="question-title">SECTION A: Network Resilience and Attack Mitigation</h2>
+                    
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> GameStream Pro is a popular online platform that hosts massive multiplayer games. Their primary concern is keeping their servers online.
+                    </div>
+
+                    <h3>Question 1: Distributed Denial of Service (DDoS)</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> ...requests flooded their main server, slowing down service...</p>
+                        <p>i. Name this type of attack and explain how it prevents legitimate users from accessing the server. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                        <p>ii. Explain why this type of attack is described as 'Distributed'. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> The company uses a firewall...</p>
+                        <p>i. Describe the main function of a firewall in relation to the traffic entering and leaving the server. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. State one limitation of a firewall regarding employee actions that could still lead to a security breach. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                    </div>
+
+                    <h3>Question 2: Brute Force and Password Security</h3>
+                    <p>GameStream Pro requires complex passwords to access source code repositories.</p>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Define what a brute force attack is and explain the mechanism it uses to crack a password. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Explain how the use of a strong password mitigates the risk of a successful brute force attack. <span class="marks">[1]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> State three specific criteria that define a strong password. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- SECTION B -->
+                <section class="question-section">
+                    <h2 class="question-title">SECTION B: Malware and Social Engineering</h2>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Global Bank Corp trains its employees extensively on recognising and avoiding sophisticated cyber threats.
+                    </div>
+
+                    <h3>Question 3: Malware Identification and Prevention</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> An employee notices an excessive number of unwanted advertising pop-ups...</p>
+                        <p>i. Name the type of malware responsible for flooding the end-user with unwanted advertising. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. State two issues that this type of malware can cause, even if it is not immediately harmful. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Another form of malware, known as spyware, is used to gather sensitive information.</p>
+                        <p>i. Explain how spyware obtains personal data from a user's computer. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. Describe two specific protective features that anti-spyware software might offer (other than removal). <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+
+                    <h3>Question 4: Phishing and Social Manipulation</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> An attacker sends an email to a bank manager claiming to be from the internal IT department...</p>
+                        <p>i. Name the broad category of cyber threat that relies on the manipulation of people. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. Name the specific human emotion this threat relies upon... <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> State three specific clues (related to communication content or address) that indicate this email is a potential phishing scam. <span class="marks">[3]</span></A</p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Explain the difference between phishing and spear phishing. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- SECTION C -->
+                <section class="question-section">
+                    <h2 class="question-title">SECTION C: Access Control and Data Security</h2>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> SecureMed Hospital manages extremely sensitive patient records and must implement strict access controls.
+                    </div>
+
+                    <h3>Question 5: Access Levels and Authentication</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Explain how access levels are used... distinguishing between the Consultant's and the Cleaner's rights. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Identify the three common factors used in authentication. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> The hospital is considering using voice recognition...</p>
+                        <p>i. State one benefit of using voice recognition. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. State one major drawback of using voice recognition that could affect its accuracy. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                    </div>
+
+                    <h3>Question 6: Network Infrastructure Role</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> ...the computer needs to convert the text address into an IP address.</p>
+                        <p>i. Name the server system responsible for this conversion. <span class="marks">[1]</span></play>
+                        <div class="answer-space-small"></div>
+                        <p>ii. Briefly describe the steps this server takes to locate the correct IP address. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> The hospital sometimes uses a proxy server. State two security benefits of using a proxy server. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Tải Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

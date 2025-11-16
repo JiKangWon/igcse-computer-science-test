@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Computer Science Practice Test: Chapter 5</title>
+    
+    <!-- Tải Bootstrap CSS và Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .question-section {
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .question-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .question-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .question-part {
+            margin-bottom: 1.25rem;
+        }
+        
+        .question-part p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-part li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .marks {
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        
+        .scenario-box {
+            background-color: var(--light-blue-bg);
+            border: 1px solid #bde0ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* Không gian trống để trả lời */
+        .answer-space {
+            border-bottom: 1px dotted #999;
+            height: 2.5em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .answer-space-small {
+            height: 1.5em;
+            border-bottom: 1px dotted #999;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>IGCSE Computer Science Practice Test</h1>
+            <p>(The Internet and Cyber Security)</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <div class="mb-4">
+                    <strong>Maximum Marks:</strong> 40<br>
+                    <strong>Recommended Time:</strong> 45 Minutes
+                </div>
+                <hr>
+
+                <!-- SECTION A -->
+                <section class="question-section">
+                    <h2 class="question-title">SECTION A: Online Retail and Data Management</h2>
+                    
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> EasyBuy Ltd. is a large international online retail company. They rely heavily on the Internet to connect with customers and process transactions.
+                    </div>
+
+                    <h3>Question 1: Accessing the Website and User Experience</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Explain the fundamental difference between the Internet and the World Wide Web (WWW). <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> A customer types the following address:
+                        <br><code>https://www.easybuy.co.uk/electronics/product_details.html</code></p>
+                        <p>i. Identify the protocol being used and explain its purpose. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                        <p>ii. State the domain type and the file name. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> When a customer visits EasyBuy, the website sends a small file to their browser to remember preferences and shopping cart items.</p>
+                        <p>i. Name this small file. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. Describe the difference between a session cookie and a persistent cookie in this context. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- SECTION B -->
+                <section class="question-section">
+                    <h2 class="question-title">SECTION B: Digital Finance and Blockchain Security</h2>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> SecurePay is a new financial technology company that offers customers secure, decentralised payment options using cryptocurrency.
+                    </div>
+
+                    <h3>Question 2: Digital Currency and Blockchain</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Explain how cryptocurrency overcomes the issues associated with the centralisation of traditional digital currency. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> SecurePay uses blockchaining to track transactions.</p>
+                        <p>i. Describe the structure of a single block in a blockchain. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <p>ii. Explain how the use of hash values prevents a hacker from tampering with data. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Explain the purpose of proof-of-work in slowing down the process of creating new blocks. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- SECTION C -->
+                <section class="question-section">
+                    <h2 class="question-title">SECTION C: Cyber Security Threats and Defences</h2>
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Global Data Solutions manages sensitive client data and faces constant cyber security threats.
+                    </div>
+
+                    <h3>Question 3: Security Threats and Mitigation</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Identify and explain two distinct differences between a worm and a virus. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> An employee sees a pop-up warning of infection, advising them to download "SafeGuard Antivirus Trial".</p>
+                        <p>i. Name the type of cyber security threat that relies on deceiving the user based on fear. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. Name and describe the specific type of malware often disguised as legitimate software. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Employees must use strong passwords.</p>
+                        <p>i. State three specific criteria that define a strong password. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <p>ii. A manager uses <code>Manager123</code>. Explain why this password is vulnerable to a brute force attack. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>d)</strong> The company implemented a system to filter network traffic.</p>
+                        <p>i. Name this security measure. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        <p>ii. Describe two specific functions this measure performs. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- SECTION D -->
+                <section class="question-section">
+                    <h2 class="question-title">SECTION D: Advanced Authentication and Web Retrieval</h2>
+                    
+                    <h3>Question 4: Authentication and Web Access</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Explain how two-step verification works, using the three common factors of authentication. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> Describe how the Secure Sockets Layer (SSL) protocol provides a secure connection. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Describe the process involving the Domain Name Server (DNS) that allows a browser to locate a web page. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Tải Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

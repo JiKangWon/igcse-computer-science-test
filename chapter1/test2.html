@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test 2 (Chapter 1: Data Representation)</title>
+    
+    <!-- Tải Bootstrap CSS và Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Thêm MathJax để hiển thị 2^20, v.v. -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .question-section {
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .question-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .question-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .question-part {
+            margin-bottom: 1.25rem;
+        }
+        
+        .question-part p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-part li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .marks {
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        
+        .scenario-box {
+            background-color: var(--light-blue-bg);
+            border: 1px solid #bde0ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* Không gian trống để trả lời */
+        .answer-space {
+            border-bottom: 1px dotted #999;
+            height: 2.5em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .answer-space-medium {
+            border-bottom: 1px dotted #999;
+            height: 1.5em;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-space-small {
+            height: 1.5em;
+            border-bottom: 1px dotted #999;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            width: 30%; /* Cho các câu trả lời ngắn */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>Computer Science IGCSE: Practice Test 2</h1>
+            <p>(Chapter 1: Data Representation)</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <div class="mb-4">
+                    <strong>Instructions:</strong> Answer all questions. Show all working where calculations are required.
+                </div>
+                <hr>
+
+                <!-- Question 1 -->
+                <section class="question-section">
+                    <h2 class="question-title">Question 1: Data Management at "Global Translate"</h2>
+                    
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> "Global Translate" specialises in multi-lingual translation services. They must ensure that all languages worldwide can be accurately represented.
+                    </div>
+
+                    <div class="question-part">
+                        <p><strong>1. (a)</strong> The company initially used the standard ASCII character set.</p>
+                        <p>(i) Explain why ASCII is referred to as a 7-bit code and state the maximum number of characters it can represent. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                        
+                        <p>(ii) Describe the main disadvantage of relying solely on standard ASCII in a global translation company. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                        
+                        <p>(iii) The company decided to migrate to the Unicode character set. State two goals set when the Unicode consortium was established. <span class="marks">[2]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <div class="answer-space-medium"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>1. (b)</strong> One document contains an internal error code: <strong>E3A</strong>.</p>
+                        <p>(i) Which number system (base) is conventionally used to display such error codes? <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        
+                        <p>(ii) Explain why this number system (Hexadecimal) is more convenient for developers than binary. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                        
+                        <p>(iii) Convert the error code <strong>E3A</strong> from Hexadecimal to Denary. Show your working. <span class="marks">[3]</span></p>
+                        <p><em>Working:</em></p>
+                        <div class="answer-space-medium"></div>
+                        <div class="answer-space-medium"></div>
+                        <p><em>Denary Value:</em></p>
+                        <div class="answer-space-medium"></div>
+                    </div>
+                </section>
+
+                <!-- Question 2 -->
+                <section class="question-section">
+                    <h2 class="question-title">Question 2: "AudioMaster" Recording Studio</h2>
+
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> AudioMaster studio produces high-quality recordings. They need to manage the quality and size of their audio files.
+                    </div>
+
+                    <div class="question-part">
+                        <p><strong>2. (a)</strong> To convert analogue sound waves into digital data, AudioMaster uses sampling.</p>
+                        <p>(i) Define <strong>Sampling Rate</strong> and state its unit of measurement. <span class="marks">[2]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>(ii) Define <strong>Sampling Resolution</strong>. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>(iii) Explain how increasing both sampling rate and resolution affects the sound quality and file size. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>2. (b)</strong> AudioMaster is storing a 4-minute (240s) stereo track at 44.1 kHz (44,100 Hz) and 16 bits.</p>
+                        <p>(i) Calculate the size of this uncompressed audio file in <strong>Mebibytes (MiB)</strong>. Show your working.
+                        <br><small>(Formula: Sample Rate × Resolution × Length (s) × 2. Use $1 \text{ MiB} = 2^{20} \text{ bytes}$)</small> <span class="marks">[3]</span></p>
+                        <p><em>Working (Step 1: Calculate Bits):</em></p>
+                        <div class="answer-space-medium"></div>
+                        <p><em>Working (Step 2: Calculate Bytes):</em></p>
+                        <div class="answer-space-medium"></div>
+                        <p><em>Working (Step 3: Calculate MiB):</em></p>
+                        <div class="answer-space-medium"></div>
+                        <p><em>File Size (MiB):</em></p>
+                        <div class="answer-space-small"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>2. (c)</strong> AudioMaster wants to email this track using the MP3 format.</p>
+                        <p>(i) Classify MP3 as either lossy or lossless compression. <span class="marks">[1]</span></p>
+                        <div class="answer-space-small"></div>
+                        
+                        <p>(ii) Explain the core principle MP3 uses to reduce file size. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- Question 3 -->
+                <section class="question-section">
+                    <h2 class="question-title">Question 3: "Security Bank" System Upgrade</h2>
+
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> Security Bank is upgrading its system and must ensure calculations are correctly handled using 8-bit registers.
+                    </div>
+
+                    <div class="question-part">
+                        <p><strong>3. (a)</strong> The bank needs to calculate 95 + 68.</p>
+                        <p>(i) Convert denary <strong>95</strong> into 8-bit binary. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>(ii) Convert denary <strong>68</strong> into 8-bit binary. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>(iii) Perform the 8-bit binary addition of 95 + 68. <span class="marks">[2]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>(iv) Describe the error that would occur if calculating 168 + 99 in 8-bits and explain why. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>3. (b)</strong> The system uses two’s complement for negative numbers.</p>
+                        <p>(i) State the significance of the Most Significant Bit (MSB) in 8-bit two’s complement. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>(ii) Convert the negative denary number <strong>-47</strong> into 8-bit two’s complement (Invert and Add 1). <span class="marks">[2]</span></p>
+                        <p><em>Step 1: +47 (Denary) to Binary:</em></p>
+                        <div class="answer-space-medium"></div>
+                        <p><em>Step 2: Invert bits:</em></p>
+                        <div class="answer-space-medium"></div>
+                        <p><em>Step 3: Add 1 (Result -47):</em></p>
+                        <div class="answer-space-medium"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>3. (c)</strong> An 8-bit register contains <code>00110001</code> (denary 49).</p>
+                        <p>(i) Perform a logical binary shift two places to the left. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>(ii) This is equivalent to which mathematical operation performed on 49? <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Tải Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

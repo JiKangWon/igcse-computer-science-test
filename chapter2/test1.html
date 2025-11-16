@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test (Chapter 2: Data Transmission)</title>
+    
+    <!-- Tải Bootstrap CSS và Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .question-section {
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .question-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .question-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .question-part {
+            margin-bottom: 1.25rem;
+        }
+        
+        .question-part p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-part li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .marks {
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        
+        .scenario-box {
+            background-color: var(--light-blue-bg);
+            border: 1px solid #bde0ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* Không gian trống để trả lời */
+        .answer-space {
+            border-bottom: 1px dotted #999;
+            height: 2.5em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .answer-space-medium {
+            border-bottom: 1px dotted #999;
+            height: 1.5em;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>Computer Science IGCSE Practice Test</h1>
+            <p>Chapter Review (Data Transmission)</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <div class="mb-4">
+                    <strong>Instructions:</strong> Answer all questions. The number of marks is given in brackets [ ] at the end of each question.
+                </div>
+                <hr>
+
+                <!-- SECTION A -->
+                <section class="question-section">
+                    <h2 class="question-title">Scenario 1: Global E-commerce Network</h2>
+                    
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> WebShop is a large e-commerce company. When a customer places an order, the data is sent from the customer’s device, across the Internet, to WebShop’s servers... The data travels through an interconnected network involving many routers.
+                    </div>
+
+                    <h3>Question 1</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> The customer order data is broken down into smaller units before transmission.
+                        <br>Identify the name given to these small units and describe the three primary sections that make up each unit. <span class="marks">[4]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> WebShop uses packet switching to transmit these units.
+                        <br>Explain how packet switching ensures that the data can reach the server even if a particular transmission path becomes busy or fails. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> Due to the sensitive nature of the payment information, WebShop uses encryption.
+                        <br>Explain the primary purpose of encryption in this context. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>d)</strong> WebShop implements asymmetric encryption...
+                        <br>Describe how two different keys (Public and Private) are used by the sender and the receiver to ensure that only the intended server can read the message. <span class="marks">[4]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- SECTION B -->
+                <section class="question-section">
+                    <h2 class="question-title">Scenario 2: Automated Warehouse System</h2>
+
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> AutoLogistics operates a fully automated warehouse. Inventory data is constantly sent wirelessly. Ensuring this data is accurate is critical.
+                    </div>
+
+                    <h3>Question 2</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> To check for errors during transmission, AutoLogistics uses a Checksum method.
+                        <br>Describe the steps involved in using a checksum to verify that a block of data has arrived without transmission errors. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> AutoLogistics sometimes uses Automatic Repeat Requests (ARQs).
+                        <br>Explain how ARQ ensures reliable data transfer by describing the roles of acknowledgements and timeout. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> When new product codes are entered manually, a check digit is used.</p>
+                        <p>i) Define the term check digit and state one type of error it detects. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                        <p>ii) Distinguish between a checksum and a check digit based on their purpose. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <!-- SECTION C -->
+                <section class="question-section">
+                    <h2 class="question-title">Scenario 3: University Computer Lab</h2>
+
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> A computer science department is designing the internal architecture and peripheral connections for its new teaching lab.
+                    </div>
+
+                    <h3>Question 3</h3>
+                    <div class="question-part">
+                        <p><strong>a)</strong> Data is transmitted between the CPU and RAM. This must be extremely fast over short distances.
+                        <br>Identify the most appropriate type of data transmission (Serial or Parallel) and justify your choice. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>b)</strong> The university uses Universal Serial Bus (USB) connections.</p>
+                        <p>i) State the transmission method (Serial or Parallel) used by USB. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii) Explain two benefits of using the USB standard. <span class="marks">[4]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>c)</strong> The network card allows students to download videos while simultaneously uploading commands.
+                        <br>Identify this data transmission mode and describe it. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    <div class="question-part">
+                        <p><strong>d)</strong> Older equipment uses half-duplex transmission.
+                        <br>Provide a clear example of a half-duplex scenario (outside the lab) and explain why it is appropriate. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Tải Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
