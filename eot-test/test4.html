@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Computer Science Practice Exam</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* CSS Variables cho chủ đề màu xanh */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --white: #ffffff;
+            --text-dark: #333;
+            --text-light: #555;
+            --border-color: #ddd;
+            --code-bg: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-blue-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .exam-header {
+            background-color: var(--secondary-blue); /* Màu xanh đậm hơn cho bài thi */
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            text-align: center;
+        }
+
+        .exam-header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-header p {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* CSS cho phần nội dung */
+        .question-section {
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .question-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .question-title {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .question-part {
+            margin-bottom: 1.25rem;
+        }
+        
+        .question-part p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-part li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .marks {
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        
+        .scenario-box {
+            background-color: var(--light-blue-bg);
+            border: 1px solid #bde0ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* Không gian trống để trả lời */
+        .answer-space {
+            border-bottom: 1px dotted #999;
+            height: 2.5em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .answer-space-medium {
+            border-bottom: 1px dotted #999;
+            height: 1.5em;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .code-inline {
+            font-family: "Courier New", Courier, monospace;
+            background-color: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container course-container">
+        
+        <header class="exam-header shadow">
+            <h1>IGCSE Computer Science Practice Exam</h1>
+            <p>(Chapters 1, 2, 5)</p>
+        </header>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+                
+                <div class="mb-4">
+                    <strong>Total Marks:</strong> 40<br>
+                    <strong>Time Limit:</strong> 45 minutes
+                </div>
+                <hr>
+
+                <section class="question-section">
+                    <h2 class="question-title">Question 1: Digital Media Storage (Data Representation)</h2>
+                    
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> "Artisan Media" specializes in creating high-resolution bitmap images and sound clips for video games.
+                    </div>
+
+                    <div class="question-part">
+                        <p><strong>a)</strong> An image has a resolution of 512 × 512 pixels and can represent 65,536 different colours.</p>
+                        <p>i. Calculate the colour depth, in bits, used for this image. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        
+                        <p>ii. Calculate the file size of this image in <strong>KiB</strong>. (Show working. $1 \text{ KiB} = 2^{10}$ bytes). <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>b)</strong> The studio uses the hexadecimal colour code <code class="code-inline">#FF9966</code>.</p>
+                        <p>i. Explain why hexadecimal is used instead of denary for colour codes. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. Convert the hexadecimal value <strong>FF</strong> into its equivalent denary value. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                    </div>
+
+                    <div class="question-part">
+                        <p><strong>c)</strong> A positive denary number, <strong>59</strong>, is loaded into an 8-bit register.</p>
+                        <p>i. Convert denary <strong>59</strong> into an <strong>8-bit</strong> binary number. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. The binary number for 59 undergoes a logical shift two places to the left. Show the 8-bit result and state the new denary value. <span class="marks">[2]</span></p>
+                        <div class="answer-space-medium"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>d)</strong> Sampling sound at a high rate results in large files.</p>
+                        <p>i. State two factors (other than length) that increase a sound file's size. <span class="marks">[2]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. Describe the difference between <strong>lossy</strong> and <strong>lossless</strong> compression, giving one example for each. <span class="marks">[4]</span></p>
+                        <div class="answer-space"></div>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <section class="question-section">
+                    <h2 class="question-title">Question 2: Inter-Office Communication (Data Transmission)</h2>
+
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> "GlobalLink" corporation transfers large, sensitive financial reports between its headquarters (City A) and a satellite office (City B) 500 km away.
+                    </div>
+
+                    <div class="question-part">
+                        <p><strong>a)</strong> Large reports are broken into smaller units.</p>
+                        <p>i. Name this small unit and identify its three main sections. <span class="marks">[2]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. Explain the purpose of the <strong>sequence number</strong> in the header. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>iii. Describe how a Cyclic Redundancy Check (CRC) detects errors. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>b)</strong> GlobalLink uses <strong>full-duplex</strong> transmission.</p>
+                        <p>i. Explain what full-duplex transmission means. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. State the transmission type (serial/parallel) used by USB and explain why it is suitable for external devices compared to the alternative. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>c)</strong> Communication is encrypted.</p>
+                        <p>i. Identify the encryption method that uses a public key and a private key. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. Describe how this method ensures only City B can decrypt the document sent by City A. <span class="marks">[3]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>d)</strong> An ISBN-13 code is entered: <code>9780340983829</code>.
+                        <br>Explain the purpose of the final digit (9) and identify this type of error-checking mechanism. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+                <section class="question-section">
+                    <h2 class="question-title">Question 3: Online Retail and Security (Internet/Cyber Security)</h2>
+                    
+                    <div class="scenario-box">
+                        <strong>Scenario:</strong> "BuySafe," an online retailer, handles thousands of transactions daily and must maintain a robust and secure online presence.
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>a)</strong> A customer types a URL into their browser.</p>
+                        <p>i. Explain the role of the Domain Name Server (DNS). <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                        <p>ii. The BuySafe website uses HTTPS. Explain the difference between HTTP and HTTPS and identify the security protocol used. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>b)</strong> BuySafe uses cookies.</p>
+                        <p>i. Define the term <strong>cookie</strong>. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. Describe the key difference between a session cookie and a persistent cookie. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>c)</strong> BuySafe is battling cyber threats.</p>
+                        <p>i. Describe the process used in a <strong>Brute Force Attack</strong>. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>ii. A customer's screen is locked with a payment demand. Name this malware. <span class="marks">[1]</span></p>
+                        <div class="answer-space-medium"></div>
+                        <p>iii. Explain how <strong>Two-step Verification</strong> improves security. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                    
+                    <div class="question-part">
+                        <p><strong>d)</strong> BuySafe uses a firewall and a proxy server.
+                        <br>Describe two ways a firewall contributes to network security. <span class="marks">[2]</span></p>
+                        <div class="answer-space"></div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
